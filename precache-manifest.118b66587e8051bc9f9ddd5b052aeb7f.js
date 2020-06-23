@@ -1,31 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93ddff4819e6f77f826e265672521a48",
+    "revision": "1eb2f5c477e7e35026e04c0c1296463a",
     "url": "/dev-website/index.html"
   },
   {
-    "revision": "6692e351701f0fda0c72",
+    "revision": "591b0de857392ea66f34",
     "url": "/dev-website/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "342368d3a804520f5a19",
+    "revision": "16c3a312dd5cca82a55f",
     "url": "/dev-website/static/css/main.e8a70e90.chunk.css"
   },
   {
-    "revision": "6692e351701f0fda0c72",
-    "url": "/dev-website/static/js/2.29c4cc0d.chunk.js"
+    "revision": "591b0de857392ea66f34",
+    "url": "/dev-website/static/js/2.9e54ab78.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/dev-website/static/js/2.29c4cc0d.chunk.js.LICENSE.txt"
+    "url": "/dev-website/static/js/2.9e54ab78.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "342368d3a804520f5a19",
-    "url": "/dev-website/static/js/main.3bb57f10.chunk.js"
+    "revision": "16c3a312dd5cca82a55f",
+    "url": "/dev-website/static/js/main.c6042c09.chunk.js"
   },
   {
     "revision": "6443a8962a8a67ee77a6",
     "url": "/dev-website/static/js/runtime-main.5df85480.js"
+  },
+  {
+    "revision": "c4acbec55643779a2659884f7ca252e9",
+    "url": "/dev-website/static/media/cityuni.c4acbec5.png"
   },
   {
     "revision": "6a4cf4853c511fba1f5b33b38e31f7cd",
@@ -38,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a089f73fc711eb527faaceba55ee8703",
     "url": "/dev-website/static/media/next-black.a089f73f.png"
+  },
+  {
+    "revision": "667434c67a28873e1f4b4376ca8f4c5d",
+    "url": "/dev-website/static/media/wanstead.667434c6.png"
   },
   {
     "revision": "e37904179c7fd834876588ac12f9c728",
