@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { HashRouter as Router, Route,Switch} from "react-router-dom";
+import Home from './components/Home'
+import About from './components/About'
+import Projects from './components/Projects'
+import PortfolioHamid from './components/PortfolioHamid'
+import './Custom.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+class App extends Component {
+  render (){
+
+
+    return(
+    <div className="App" >
+  <Router basename={'dev-website'}>
+    <div >
+      <Switch>
+      
+      <Route exact path='/' render={() => (<PortfolioHamid  />)}/> 
+      <Route path='/main' render={() => (<Home  />)}/> 
+      <Route exact path='/about' render={() => (<About  />)}/> 
+      <Route exact path='/projects' render={() => (<Projects  />)}/> 
+      <Route exact path='/hamid' render={() => (<PortfolioHamid  />)}/> 
+  </Switch>
+ 
+    
     </div>
-  );
+    </Router>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </div>
+  )}
 }
 
 export default App;

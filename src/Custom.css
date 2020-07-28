@@ -1,0 +1,53 @@
+/* body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.Menu{
+    width:100%;
+    
+    box-sizing: border-box;
+    top: 0;
+    margin: 0;
+  
+    background: #2c3e50;
+  }
+  .TopMenu ul{
+    list-style: none;
+    padding: 1em;
+  }
+  .MenuLinks{
+    display: inline;
+    margin-right: 1em;
+  }
+  .Logo{
+    display: inline;
+    margin-right: 3em;
+    font-size: 1em;
+  }
+.Banner{
+    height: 50vh;
+    width: 100%;
+    border: 1px solid black;
+    background: url("components/londonSky.jpg");
+}
+  h1{
+    height: 100%;
+    position: relative;
+    top: 50%;
+    text-transform: uppercase;
+    color: #cacfcc;
+    border: 1px solid black;
+ }
+  footer{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    margin-right: 25%;
+    background: grey;
+    border:1px solid black;
+    padding: 2em;
+  
+  } */
