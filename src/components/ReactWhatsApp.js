@@ -35,13 +35,15 @@ class ReactWhatsApp extends Component {
 
     getContacts = ()=>{
 
+      console.log('contacts')
 
-        // Contacts.getAll((err, contacts) => {
-        //     if (err) {
-        //       throw err;
-        //     }
-        //     console.log(contacts)
-        //   })
+
+        Contacts.getAll((err, contacts) => {
+            if (err) {
+              throw err;
+            }
+            console.log(contacts)
+          })
 
 
     }
