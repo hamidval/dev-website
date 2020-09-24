@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route,Switch} from "react-router-dom";
 import Home from './components/Home'
+import GailHome from './components/example_website/Home'
+import GailProduct from './components/example_website/Product'
+import GailContact from './components/example_website/Contact'
+import Feature from './components/Feature'
 import About from './components/About'
 import Projects from './components/Projects'
-import PortfolioHamid from './components/PortfolioHamid'
-import ReactWhatsApp from './components/ReactWhatsApp'
+
+import ReactWhatsApp from './components/d3/ReactWhatsApp'
 import './Custom.css';
 import './App.css';
 
@@ -20,12 +24,15 @@ class App extends Component {
     <div >
       <Switch>
       
-      <Route exact path='/' render={() => (<PortfolioHamid  />)}/> 
-      <Route path='/main' render={() => (<Home  />)}/> 
-      <Route exact path='/about' render={() => (<About  />)}/> 
-      <Route exact path='/projects' render={() => (<Projects  />)}/> 
-      <Route exact path='/hamid' render={() => (<PortfolioHamid  />)}/> 
-      <Route exact path='/whatsapp' render={() => (<ReactWhatsApp  />)}/> 
+      <Route exact path='/' render={() => (<Home  />)}/> 
+      <Route exact path='/features' render={() => (<Feature  />)}/> 
+
+      <Route path='/gails' render={() => (<GailHome  />)}/> 
+      <Route exact path='/contact' render={() => (<GailContact  />)}/>
+      <Route exact path='/product' render={() => (<GailProduct  />)}/>  
+     
+    
+      
 
   </Switch>
  

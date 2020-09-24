@@ -25,9 +25,9 @@ class ReactWhatsApp extends Component {
 
         // client.messages
         // .create({
-        //    from: 'whatsapp:+447476095867',
+        //    from: 'whatsapp:+4',
         //    body: 'sent from app',
-        //    to: 'whatsapp:+447479955062'
+        //    to: 'whatsapp:+'
         //  })
         // .then(message => console.log(message.sid));
 
