@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter} from 'react-router-dom'
-import Chart4 from './Chart4'
+import Chart4 from '../Chart4'
 
 
 
