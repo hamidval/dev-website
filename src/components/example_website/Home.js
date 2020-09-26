@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter} from 'react-router-dom'
-//import videos from './video.mp4'
+import video from './video.mp4'
 
 
 
@@ -13,13 +13,10 @@ class Home extends Component {
 
         return ( 
             
-
-
-
             <section class="wrapper">
             <div class="video-wrap">
-            <video loop autoPlay>
-            <source  type="video/mp4"/>
+            <video loop src={video} muted={true} autoPlay>
+            <source   type="video/mp4"/>
             </video>
             </div>
             <div class="overlay"></div>
