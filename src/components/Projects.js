@@ -9,12 +9,14 @@ class Projects extends Component {
     constructor(){
         super()
 
-        this.state= {show:false}
+        this.state= {show:false,imgs:[{title:"Gail's",image:gailsThumbnail}],imageIndex:0}
             }
 
 
-            handleClose= ()=>{
+            handleClose= (imageIndex)=>{
 
+
+              this.setState({imageIndex:imageIndex})
               this.setState({show:!this.state.show})
              }
 
@@ -23,11 +25,11 @@ class Projects extends Component {
           <div >
             <h1 className="projects-title">Projects</h1>
 
-            <div className='grid'>
+            <div className='grid-projects'>
 
 
-            <div class="card" styles="width: 18rem;">
-              <img onClick={this.handleClose}  class="card-img-top" src={gailsThumbnail} alt="Card image cap"></img>
+            <div class="card " styles="width: 18rem;">
+              <img onClick={()=>this.handleClose(0)}  class="card-img-top card-thumb" src={gailsThumbnail} alt="Card image cap"></img>
               <div class="card-body">
                 <h5 class="card-title" >Gails Bakery</h5>
                 <p class="card-text"> Example Site</p>
@@ -38,8 +40,8 @@ class Projects extends Component {
 
               </div>
 
-              <div class="card" styles="width: 18rem;">
-              <img class="card-img-top" src={gailsThumbnail} alt="Card image cap"></img>
+              <div class="card" >
+              <img  onClick={()=>this.handleClose(0)}  class="card-img-top card-thumb" src={gailsThumbnail} alt="Card image cap"></img>
               <div class="card-body">
                 <h5 class="card-title" >Gails Bakery</h5>
                 <p class="card-text"> Example Site</p>
@@ -54,28 +56,40 @@ class Projects extends Component {
 
             </div>
 
+            {
+              this.state.imgs[this.state.imageIndex]?
+                (
+
+                  <Modal
+                  show={this.state.show}
+                  onHide={this.handleClose}>
+            <Modal.Header >
+            <Modal.Title>{this.state.imgs[this.state.imageIndex].title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <img src={this.state.imgs[this.state.imageIndex].image}>
+            </img>
+            </Modal.Body>
+            <Modal.Footer>
+              <button className="btn btn-danger" onClick={this.handleClose}>
+                Close
+              </button>
             
-            <Modal
-        show={this.state.show}
-        onHide={this.handleClose}
+            </Modal.Footer>
+          </Modal>
     
-      >
-        <Modal.Header >
-        <Modal.Title>Dynamic Title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <img src={gailsThumbnail}>
-        </img>
-        </Modal.Body>
-        <Modal.Footer>
-          <button className="btn btn-danger" onClick={this.handleClose}>
-            Close
-          </button>
-        
-        </Modal.Footer>
-      </Modal>
+    
 
 
+
+                )
+
+
+              :null
+
+
+            }
+           
 
        
           </div>

@@ -415,3 +415,25 @@ section{
 .projects-title{
   color: black;
 }
+
+.card-thumb:hover {
+
+  cursor: pointer;
+  transform: scale(1.1) ;
+ 
+}
+
+.grid-projects{
+  display: grid;
+  /* grid-gap: 20px; */
+  margin:20px;
+  grid-template-columns: repeat(auto-fill,200px); 
+  grid-gap:20px;
+  
+	/* grid-template-columns: minmax(250px,0.5fr) 0.5fr; */
+  grid-template-rows: 1fr 1fr;
+ 
+
+  
+
+}
