@@ -355,7 +355,7 @@ section{
   height: 100vh;
   display: flex;
   align-items:center;
-  color: #fff;
+  background-color: #fff;
 }
 .video-wrap{
   position:absolute;
@@ -382,7 +382,27 @@ section{
 
 }
 .landing-text{
-  z-index: 2;
+
+
+
+}
+
+.wrapper-2{
+  height: 100vh;
+
+
 }
 
 
+.gails-title { position: absolute; top: 0; left: 0;
+  display: flex;
+  font-size: 5rem;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+
+
+ 
+  z-index: 0;
+  
+}
