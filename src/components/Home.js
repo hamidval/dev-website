@@ -58,11 +58,7 @@ class Home extends Component {
               
                     </div>
 
-                    
-                    <div >
-                                <p>Digital branding agency</p>
-                                <p>Let us guide you through building an online prescrence</p>
-                    </div>
+               
 
                 </section>
                 <section style={projectsStyle}>

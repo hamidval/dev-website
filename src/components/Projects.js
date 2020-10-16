@@ -60,8 +60,7 @@ class Projects extends Component {
               this.state.imgs[this.state.imageIndex]?
                 (
 
-                  <Modal
-                  show={this.state.show}
+                  <Modal size={'lg'}  show={this.state.show}
                   onHide={this.handleClose}>
             <Modal.Header >
             <Modal.Title>{this.state.imgs[this.state.imageIndex].title}</Modal.Title>
