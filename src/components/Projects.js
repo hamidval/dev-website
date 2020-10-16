@@ -60,21 +60,21 @@ class Projects extends Component {
               this.state.imgs[this.state.imageIndex]?
                 (
 
-                  <Modal size={'lg'}  show={this.state.show}
+                  <Modal 
+                  dialogClassName="modal-dialog"
+                  onClick={this.handleClose}
+                   show={this.state.show}
                   onHide={this.handleClose}>
-            <Modal.Header >
-            <Modal.Title>{this.state.imgs[this.state.imageIndex].title}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-            <img src={this.state.imgs[this.state.imageIndex].image}>
-            </img>
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="btn btn-danger" onClick={this.handleClose}>
-                Close
-              </button>
-            
-            </Modal.Footer>
+      
+              <Modal.Body>
+              <img className="modal-img" src={this.state.imgs[this.state.imageIndex].image}></img>
+
+
+              </Modal.Body>
+
+    
+           
+    
           </Modal>
     
     

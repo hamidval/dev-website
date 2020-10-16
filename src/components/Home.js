@@ -17,7 +17,7 @@ const imageStyle = {
   }
 
   const aboutStyle = {
-    backgroundColor:'white',
+    backgroundColor:'#e6e6e6',
     minHeight:'100vh',
     backgroundSize: 'auto 100%',
     textAlign: 'center',
@@ -27,13 +27,13 @@ const imageStyle = {
   }
 
   const projectsStyle = {
-    backgroundColor:'white',
+    backgroundColor:'#f2f2f2',
     minHeight:'100vh',
     backgroundSize: 'auto 100%',
     textAlign: 'center',
     position: 'inline',
     marginTop: '0  !important',
-    color: 'white'
+    color: 'black'
 
   }
 
@@ -69,7 +69,7 @@ class Home extends Component {
                     <Testimonial/>
                     
                 </section>
-                <section style={aboutStyle}>
+                <section style={projectsStyle}>
                     <About/>                   
                     
                 </section>

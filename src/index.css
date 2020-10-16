@@ -186,11 +186,12 @@ display: inline-block;
 }
 
 .home-title{
-  font-size: 9vw;
+  font-size: 7vh;
   position: absolute;
-  top:40%;
-  left: 12%;
+  top:13%;
+  left: 3%;
   color: ivory;
+  letter-spacing: 13px;
 
 }
 
@@ -435,5 +436,19 @@ section{
  
 
   
+
+}
+
+
+.modal-dialog {
+  max-width: none !important;
+  padding: 6rem;
+
+ 
+}
+
+.modal-img{
+  height: 70% !important;
+  width: 100%;
 
 }
