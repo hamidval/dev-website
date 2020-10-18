@@ -461,9 +461,20 @@ section{
 }
 
 .panel{
-  width: 80%;
-  margin: 5px;
+  width: 100%;
+  margin:20px 0px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px; 
+  border-radius: 5px;
 
+  
+}
 
+.panel > div{
+  font-weight: 500;
+  font-size: x-large;
+  
   
 }

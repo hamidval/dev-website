@@ -32,9 +32,11 @@ class About extends Component {
 
         return ( 
       
-        <div >
+        <div style={{padding:'10%'}} >
             <h1 className="title-style">About Us</h1>
-            <div className="btn btn-success panel"  onClick={()=>{this.setState({openWHA:!this.state.openWHA})}}>Who We Are?</div>
+            <div className="btn btn-primary panel"   onClick={()=>{this.setState({openWHA:!this.state.openWHA})}}>
+              <div>Who We Are?</div>
+            </div>
               <Collapse in={this.state.openWHA}>
                 <div >
                   <p className='h6'>
@@ -43,7 +45,9 @@ class About extends Component {
                   </p>
                 </div>
               </Collapse>
-            <div className="btn btn-primary panel"  onClick={()=>{this.setState({openWWD:!this.state.openWWD})}}>What We Do?</div>
+            <div className="btn btn-primary panel"  onClick={()=>{this.setState({openWWD:!this.state.openWWD})}}>
+              <div>What We Do?</div>
+            </div>
               <Collapse in={this.state.openWWD}>
                   <div >
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
@@ -51,7 +55,9 @@ class About extends Component {
                     labore wes anderson cred nesciunt sapiente ea proident.
                   </div>
                 </Collapse>
-            <div className="btn btn-danger panel"  onClick={()=>{this.setState({openOS:!this.state.openOS})}}>Our Services</div>
+            <div className="btn btn-primary panel" onClick={()=>{this.setState({openOS:!this.state.openOS})}}>
+              <div>Our Services</div>
+            </div>
               <Collapse in={this.state.openOS}>
               <div className='grid-about'>
             {
