@@ -13,7 +13,14 @@ import './App.css';
 
 
 class App extends Component {
+
+
+  componentDidMount = ()=>{
+    document.title = "Skyline"
+  }
   render (){
+
+
 
 
     return(

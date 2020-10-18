@@ -452,3 +452,18 @@ section{
   width: 100%;
 
 }
+
+.title-style{
+  font-size: 7vh;
+  padding: 20px;
+  color: black;
+  letter-spacing: 2px;
+}
+
+.panel{
+  width: 80%;
+  margin: 5px;
+
+
+  
+}
