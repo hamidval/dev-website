@@ -34,7 +34,7 @@ class Testimonial extends Component {
                     </div>
                 </div>
             </div>
-            <div class="card text-white bg-success mb-3" style={{margin: '0% 15%'}} >
+            <div class="card text-white bg-primary mb-3" style={{margin: '0% 15%'}} >
                 <div class="card-header h4">FC Leytonstone</div>
                 <div class="card-body">
                     <div className='row'>
