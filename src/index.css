@@ -357,6 +357,7 @@ section{
   display: flex;
   align-items:center;
   background-color: #fff;
+  
 }
 .video-wrap{
   position:absolute;
@@ -380,6 +381,7 @@ section{
   background: #2d3e50;
   position: absolute;
   opacity: 0.7;
+  
 
 }
 .landing-text{
@@ -483,4 +485,16 @@ section{
   width:125px ;
   
   border-radius: 4px;
+}
+
+.video-container{
+  border: black 2px;
+  
+  background-color: #c1343f;
+ 
+}
+.video{
+  width: 100%;
+  padding:5px;
+ 
 }
