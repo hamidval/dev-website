@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { withRouter} from 'react-router-dom'
 import video from './video.mp4'
 import logo from './gailslogo.png'
-import {Navbar,Nav,NavDropdown,Carousel} from 'react-bootstrap'
+import {Carousel} from 'react-bootstrap'
+import Navbar from './Navbar';
 import hampersimg from './images/hampers.png'
 import bahkimg from './images/bahk.png'
 import sourdough from './images/sourdough.png'
@@ -15,33 +16,9 @@ class Home extends Component {
 
         return ( 
             <div >
-              <div style={{background:'#D02030 !important'}}> 
-              <Navbar  style={{backgroundColor: '#D02030'}} collapseOnSelect expand="lg"  variant="dark">
-              <Navbar.Brand href="#home">Gails</Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
-                  <Nav.Link href="#features">Gallary</Nav.Link>
-                  <Nav.Link href="#pricing">Place an Order</Nav.Link>
-                  <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Contact</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Social Media</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Recipe</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-                <Nav>
-                  <Nav.Link href="#deets">AboutUs</Nav.Link>
-                  <Nav.Link eventKey={2} href="#memes">
-                    Dank memes
-                  </Nav.Link>
-                </Nav>
-              </Navbar.Collapse>
-            </Navbar>
 
-
-              </div>
+              <Navbar/>
+        
 
           <section className='video-container' >
             <div className="video-container">

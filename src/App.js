@@ -3,6 +3,7 @@ import { HashRouter as Router, Route,Switch} from "react-router-dom";
 import Home from './components/Home'
 
 import GailHome from './components/example_website/Home'
+import GailOrder from './components/example_website/Order'
 import GailProduct from './components/example_website/Product'
 import GailContact from './components/example_website/Contact'
 import Feature from './components/Feature'
@@ -30,6 +31,7 @@ class App extends Component {
       <Switch>
       
       <Route exact path='/' render={() => (<Home  />)}/> 
+      <Route exact path='/gails/order' render={() => (<GailOrder  />)}/> 
       
 
       <Route exact path='/features' render={() => (<Feature  />)}/> 
