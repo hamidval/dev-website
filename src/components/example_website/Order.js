@@ -16,13 +16,30 @@ class Order extends Component {
         
     }
 
+    componentDidMount = async ()=>{
+    
+      await this.getBasketItems();
+
+        
+       
+      }
+    
+      getBasketItems = async ()=>{
+       var items = JSON.parse(localStorage.getItem("orderItems"));
+       if(items != null){
+        this.setState({orderItems:items})
+       }
+   
+     
+       
+      }
+
     addToOrder = async (e,index)  =>{
         await this.setState({orderItems:this.state.orderItems.concat(index)})
-        await localStorage.setItem("orderItems",this.state.orderItems)
-        await console.log(localStorage.getItem("orderItems"))
+        await localStorage.setItem("orderItems",JSON.stringify(this.state.orderItems))
+        await this.getBasketItems();
 
     }
-
 
 
     render() {
@@ -30,8 +47,8 @@ class Order extends Component {
         return ( 
             
 
-<div>
-            <NavBar/>
+    <div>
+            <NavBar items={this.state.orderItems}/>
             <div className="container"> 
 
          
@@ -41,8 +58,7 @@ class Order extends Component {
                     </div>
                 </div>
 
-               
-                <div className="grid-projects">
+                        <div className="grid-projects">
                     <div class="card " styles="width: 18rem;">
                         <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
                         <div class="card-body">

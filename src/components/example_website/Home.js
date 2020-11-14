@@ -9,15 +9,30 @@ import bahkimg from './images/bahk.png'
 import sourdough from './images/sourdough.png'
 
 class Home extends Component {
+  constructor(props){
+    super(props)
+    this.state = {orderItems:[]}
+  }
+  componentDidMount = async ()=>{
+    
+    await this.getBasketItems();
 
+      
+     
+    }
 
-
+  getBasketItems = async ()=>{
+    var items = JSON.parse(localStorage.getItem("orderItems"));
+    if(items != null){
+     this.setState({orderItems:items})
+    }
+  }
     render() {
 
         return ( 
             <div >
 
-              <Navbar/>
+              <Navbar items={this.state.orderItems}/>
         
 
           <section className='video-container' >
@@ -27,7 +42,7 @@ class Home extends Component {
            
             </video>
             <h1 className="gails-title">
-              Gails
+              <img className="gails-logo" src="https://gailsbread.co.uk/order/themes/gailsbread2019/img/logo.png"></img>
             </h1>
            
 
