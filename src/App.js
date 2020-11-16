@@ -6,6 +6,7 @@ import GailHome from './components/example_website/Home'
 import GailOrder from './components/example_website/Order'
 import GailProduct from './components/example_website/Product'
 import GailContact from './components/example_website/Contact'
+import GailBasket from './components/example_website/Basket'
 import Feature from './components/Feature'
 
 import './Custom.css';
@@ -32,6 +33,8 @@ class App extends Component {
       
       <Route exact path='/' render={() => (<Home  />)}/> 
       <Route exact path='/gails/order' render={() => (<GailOrder  />)}/> 
+      <Route exact path='/gails/basket' render={() => (<GailBasket  />)}/> 
+      
       
 
       <Route exact path='/features' render={() => (<Feature  />)}/> 

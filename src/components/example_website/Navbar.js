@@ -38,8 +38,9 @@ class NavBar extends Component {
               </Nav>
               <Nav>
                <Nav.Link >
+                 <div onClick={()=>{window.location.href = "#/gails/basket";}} >
                 <OverlayTrigger
-                  trigger="click"
+                  trigger="hover"
                   key={'bottom'}
                   placement={'bottom'}
                   overlay={
@@ -52,7 +53,7 @@ class NavBar extends Component {
                           this.props.items.length >0 ?
                             this.props.items.map((item,index)=>(
                               <div className="row basket-item">
-                                  {item}
+                                  {item.productName}
                               </div>
                             ))
                             :null
@@ -68,6 +69,7 @@ class NavBar extends Component {
                   </svg>
     
                 </OverlayTrigger>
+              </div>
                 </Nav.Link>
 
               </Nav>

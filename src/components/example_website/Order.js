@@ -3,7 +3,7 @@ import { Nav } from 'react-bootstrap';
 import { withRouter} from 'react-router-dom'
 import coffee from './images/coffee.jpg'
 import NavBar from './Navbar'
- 
+import data from './data.json'
 
 
 
@@ -12,9 +12,9 @@ class Order extends Component {
 
     constructor(props){
         super(props)
-        this.state = {orderItems:[]}
+        this.state = {orderItems:[],orderItemIds:[]}
         
-    }
+   }
 
     componentDidMount = async ()=>{
     
@@ -25,9 +25,9 @@ class Order extends Component {
       }
     
       getBasketItems = async ()=>{
-       var items = JSON.parse(localStorage.getItem("orderItems"));
+       var items = JSON.parse(localStorage.getItem("orderItemIds"));
        if(items != null){
-        this.setState({orderItems:items})
+        this.setState({orderItemsIds:items})
        }
    
      
@@ -35,8 +35,8 @@ class Order extends Component {
       }
 
     addToOrder = async (e,index)  =>{
-        await this.setState({orderItems:this.state.orderItems.concat(index)})
-        await localStorage.setItem("orderItems",JSON.stringify(this.state.orderItems))
+        await this.setState({orderItemIds:this.state.orderItemIds.concat(index)})
+        await localStorage.setItem("orderItems",JSON.stringify(this.state.orderItemIds))
         await this.getBasketItems();
 
     }
@@ -58,39 +58,24 @@ class Order extends Component {
                     </div>
                 </div>
 
-                        <div className="grid-projects">
-                    <div class="card " styles="width: 18rem;">
-                        <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
-                        <div class="card-body">
-                            <h5 class="card-title">Coffee</h5>
-                            <p class="card-text"> enjoy a nice cup of coffe, to start the morning, after a long day, or just for bants</p>
-                            <button onClick={(e)=>{this.addToOrder(e,0)}} class="btn btn-primary">Add To Basket</button>
-                        </div>                
-                    </div>
-                    <div class="card " styles="width: 18rem;">
-                        <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
-                        <div class="card-body">
-                            <h5 class="card-title">Coffee</h5>
-                            <p class="card-text"> enjoy a nice cup of coffe, to start the morning, after a long day, or just for bants</p>
-                            <button onClick={(e)=>{this.addToOrder(e,1)}} class="btn btn-primary">Add To Basket</button>
-                        </div>                
-                    </div>
-                    <div class="card " styles="width: 18rem;">
-                        <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
-                        <div class="card-body">
-                            <h5 class="card-title">Coffee</h5>
-                            <p class="card-text"> enjoy a nice cup of coffe, to start the morning, after a long day, or just for bants</p>
-                            <button onClick={(e)=>{this.addToOrder(e,2)}} class="btn btn-primary">Add To Basket</button>
-                        </div>                
-                    </div>
-                    <div class="card " styles="width: 18rem;">
-                        <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
-                        <div class="card-body">
-                            <h5 class="card-title">Coffee</h5>
-                            <p class="card-text"> enjoy a nice cup of coffe, to start the morning, after a long day, or just for bants</p>
-                            <button onClick={(e)=>{this.addToOrder(e,3)}} class="btn btn-primary">Add To Basket</button>
-                        </div>                
-                    </div>
+                <div className="grid-projects">
+
+                    {
+                        data.data.map((item,index)=>(
+                        
+                        <div class="card " styles="width: 18rem;">
+                            <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
+                            <div class="card-body">
+                            <h5 class="card-title">{item.productName}</h5>
+                                <p class="card-text">{item.description}</p>
+                                <button onClick={(e)=>{this.addToOrder(e,item.id)}} class="btn btn-primary">Add To Basket</button>
+                            </div>                
+                        </div>  
+
+
+                        ))
+                    }
+                              
                 </div>
     </div>
     </div>

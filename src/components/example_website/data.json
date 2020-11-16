@@ -1,0 +1,33 @@
+{
+    "data":[
+                {
+                    "id":0,
+                    "productName":"Coffee",
+                    "description":"best coffee in town",
+                    "quantity":0,
+                    "price":1.5                
+                },
+                {
+                    "id":1,
+                    "productName":"Bread",
+                    "description":"best bread in town",
+                    "quantity":0,
+                    "price":1.5                
+                },
+                {
+                    "id":2,
+                    "productName":"Tea",
+                    "description":"best tea in town",
+                    "quantity":0,
+                    "price":1.5                
+                },
+                {
+                    "id":3,
+                    "productName":"Hot Choclate",
+                    "description":"best hot choclate in town",
+                    "quantity":0,
+                    "price":1.5                
+                }
+
+            ]
+}
