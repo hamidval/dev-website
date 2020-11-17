@@ -8,13 +8,14 @@ class Basket extends Component {
 
     constructor(props){
         super(props)
-        this.state = {orderItems:[],orderItemIds:[],data:data.data}
+        this.state = {orderItems:[],orderItemIds:[],data:data.data,total:0}
       }
 
     componentDidMount = async ()=>{
     
         await this.getBasketItemIds();
         await this.setOrderItems();
+        await this.calculateTotal();
 
     
           
@@ -22,7 +23,7 @@ class Basket extends Component {
         }
     
       getBasketItemIds = async ()=>{
-        var items = JSON.parse(localStorage.getItem("orderItems"));
+        var items = JSON.parse(localStorage.getItem("orderItemIds"));
         if(items != null){
          this.setState({orderItemIds:items})
         }
@@ -32,12 +33,13 @@ class Basket extends Component {
       setOrderItems = async () => {
           if(this.state.orderItemIds != null){
             var arr =[]
-            this.state.orderItemIds.map((id,index)=>{
+            this.state.orderItemIds.map((item,index)=>{
                
                 this.state.data.map((prod,index)=>{
-                    if(prod.id == id){
+                    if(prod.id == item.id){
+                        prod.quantity = item.quantity;
                         arr.push(prod) 
-                        console.log(true)                   
+                                        
                     }
                 })
                 this.setState({orderItems:arr})
@@ -45,6 +47,15 @@ class Basket extends Component {
 
             console.log(this.state.orderItems)
         }
+      }
+
+      calculateTotal = () =>{
+          var total = 0
+          this.state.orderItems.map((item,index)=>{
+                total = total + (item.price*item.quantity)
+
+          })
+          this.setState({total:total})
       }
 
     render() {
@@ -78,8 +89,8 @@ class Basket extends Component {
                                 <thead>
                                     <tr>
                                         <th scope="col">Order Details</th>
-                                        <th scope="col">Price</th>
                                         <th scope="col">Quantity</th>
+                                        <th scope="col">Price</th>
                                         <th scope="col">Total</th>
                                     </tr>
                                 </thead>
@@ -101,7 +112,31 @@ class Basket extends Component {
                             :null
                         :null
                     }
+                     
                    
+                    </div>
+                    <div>
+                            <button 
+                                className='btn btn-danger' 
+                                style={{color:'#D02030 !important',float:'right'}}
+                                onClick={()=>window.location.href = '#/gails/checkout'}
+                            >
+                                Checkout
+                            </button>
+                        
+                    </div>
+                    <div>
+                    <button 
+                                className='btn btn-secondary' 
+                                style={{color:'#D02030 !important',float:'right'}}
+                                onClick={()=>window.location.href = '#/gails/checkout'}
+                            >
+                                {this.state.total>0?
+                                    this.state.total
+                                :null
+                                }
+                            </button>
+
                     </div>
                 </div>
                 <div>

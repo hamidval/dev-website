@@ -1,18 +1,42 @@
 import React, { Component } from 'react';
 import { withRouter} from 'react-router-dom'
 import {Navbar,Nav,NavDropdown,OverlayTrigger,Popover,Button} from 'react-bootstrap'
-
+import data from './data.json'
 
 class NavBar extends Component {
   constructor(props){
   super(props)
-  this.state = {addedItems:[]}
+  this.state = {orderItems:[],orderItemIds:[]}
   }
 
-  componentDidMount = ()=>{
+  componentDidMount = async ()=>{
+ 
+      await this.getBasketItems();
 
-    console.log(this.props.items)
-    this.setState({addedItems:this.props.items})
+    
+  }
+
+  getBasketItems = async ()=>{
+    console.log('get items')
+    var items = JSON.parse(localStorage.getItem("orderItemIds"));
+    var ids = []
+    items.map((item,index)=>{
+      ids.push(item.id)
+    })
+    this.setState({orderItemIds:ids})
+    if(items != null){
+      var arr = []
+      data.data.map((prod,index)=>{
+        items.map((item,index)=>{
+          if(prod.id === item.id){
+            prod.quantity = item.quantity
+            arr.push(prod)
+            }
+        })
+      })
+      this.setState({orderItems:arr})
+    }
+    console.log(arr)
   }
 
 
@@ -38,9 +62,11 @@ class NavBar extends Component {
               </Nav>
               <Nav>
                <Nav.Link >
-                 <div onClick={()=>{window.location.href = "#/gails/basket";}} >
-                <OverlayTrigger
-                  trigger="hover"
+                 <div
+                 onMouseEnter={()=>this.getBasketItems()} 
+                > 
+                  <OverlayTrigger
+                  trigger="click"
                   key={'bottom'}
                   placement={'bottom'}
                   overlay={
@@ -49,11 +75,14 @@ class NavBar extends Component {
                       <Popover.Content>
                         <div className="col">
 
-                          {this.props.items?
-                          this.props.items.length >0 ?
-                            this.props.items.map((item,index)=>(
-                              <div className="row basket-item">
-                                  {item.productName}
+                          {this.state.orderItems?
+                           this.state.orderItems.length > 0 ?
+                            this.state.orderItems.map((item,index)=>(
+                              <div className="card" style={{marginBottom:'8px'}}>
+                                <div className="card-body">
+                                  <h5 className="card-title">{item.productName}</h5>
+                                  <p className="card-text" >{item.price}</p>
+                                </div>
                               </div>
                             ))
                             :null
