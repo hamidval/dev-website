@@ -78,7 +78,9 @@ class Order extends Component {
                                 this.state.allItems.map((item,index)=>(                        
                         
                         <div class="card " styles="width: 18rem;">
-                            <img class="card-img-top card-thumb" src={coffee} alt="Card image cap"></img>
+                            <div style={{height:'150px'}}>
+                                <img class="card-img-top card-thumb" src={item.source} alt="Card image cap"></img>
+                            </div>                            
                             <div class="card-body">
                             <h5 class="card-title">{item.productName}</h5>
                                 <p class="card-text">{item.description}</p>

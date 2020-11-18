@@ -6,7 +6,7 @@ import data from './data.json'
 class NavBar extends Component {
   constructor(props){
   super(props)
-  this.state = {orderItems:[],orderItemIds:[]}
+  this.state = {orderItems:[],orderItemIds:[],show:false}
   }
 
   componentDidMount = async ()=>{
@@ -16,27 +16,34 @@ class NavBar extends Component {
     
   }
 
+  showBasket = ()=>{
+    this.getBasketItems();
+    this.setState({show:true})
+  }
+  hideBasket = ()=>{this.setState({show:false})}
+
   getBasketItems = async ()=>{
-    console.log('get items')
+   console.log('get')
     var items = JSON.parse(localStorage.getItem("orderItemIds"));
-    var ids = []
-    items.map((item,index)=>{
-      ids.push(item.id)
-    })
-    this.setState({orderItemIds:ids})
-    if(items != null){
-      var arr = []
-      data.data.map((prod,index)=>{
+      if(items != null){
+        var ids = []
         items.map((item,index)=>{
-          if(prod.id === item.id){
-            prod.quantity = item.quantity
-            arr.push(prod)
-            }
+          ids.push(item.id)
         })
-      })
-      this.setState({orderItems:arr})
-    }
-    console.log(arr)
+        this.setState({orderItemIds:ids})
+        if(items != null){
+          var arr = []
+          data.data.map((prod,index)=>{
+            items.map((item,index)=>{
+              if(prod.id === item.id){
+                prod.quantity = item.quantity
+                arr.push(prod)
+                }
+            })
+          })
+          this.setState({orderItems:arr})
+        }
+      }
   }
 
 
@@ -63,26 +70,36 @@ class NavBar extends Component {
               <Nav>
                <Nav.Link >
                  <div
-                 onMouseEnter={()=>this.getBasketItems()} 
+                 onMouseEnter={this.showBasket} 
+                 onMouseLeave={this.hideBasket}
+                 onClick={()=>window.location.href = "#/gails/basket"}
                 > 
                   <OverlayTrigger
-                  trigger="click"
+                  show={this.state.show}
                   key={'bottom'}
                   placement={'bottom'}
                   overlay={
                     <Popover id={`popover-positioned-bottom`}>
                       <Popover.Title as="h3">{`Basket`}</Popover.Title>
                       <Popover.Content>
-                        <div className="col">
+                        <div >
 
                           {this.state.orderItems?
                            this.state.orderItems.length > 0 ?
                             this.state.orderItems.map((item,index)=>(
                               <div className="card" style={{marginBottom:'8px'}}>
-                                <div className="card-body">
-                                  <h5 className="card-title">{item.productName}</h5>
-                                  <p className="card-text" >{item.price}</p>
-                                </div>
+                                <div className='row'>
+                                  <div className='col-5'>
+                                    <img  class="card-img-top" src={item.source}></img>
+                                  </div>
+                                  <div className='col'>
+                                    <div className="card-body">
+                                      <h5 className="card-title">{item.productName}</h5>
+                                      <p className="card-text">Price : £ {item.price}</p>
+                                      <p className="card-text">Quantity {item.quantity}</p>
+                                    </div>
+                                  </div>
+                                </div>                                                          
                               </div>
                             ))
                             :null

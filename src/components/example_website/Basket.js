@@ -115,34 +115,28 @@ class Basket extends Component {
                      
                    
                     </div>
-                    <div>
-                            <button 
-                                className='btn btn-danger' 
-                                style={{color:'#D02030 !important',float:'right'}}
-                                onClick={()=>window.location.href = '#/gails/checkout'}
-                            >
-                                Checkout
-                            </button>
+                    <div className='row' style={{display:'flow-root'}}>
+                            <div className="checkout-total" style={{float:'right'}}  > Total : £
+                                {this.state.total?
+                                        this.state.total
+                                    :null
+                                }
+                            </div>
+                    </div>
+                    <div className='row' style={{display:'flow-root'}}>
+                        <button onClick={()=>{window.location.href = '#/gails/checkout'}} 
+                        className='btn btn-danger' style={{float:'right',marginRight:'5rem'}} >Checkout</button>
+                       
                         
                     </div>
-                    <div>
-                    <button 
-                                className='btn btn-secondary' 
-                                style={{color:'#D02030 !important',float:'right'}}
-                                onClick={()=>window.location.href = '#/gails/checkout'}
-                            >
-                                {this.state.total>0?
-                                    this.state.total
-                                :null
-                                }
-                            </button>
+                 
+                 
 
-                    </div>
-                </div>
-                <div>
-                    
-                </div>
 
+                   
+                   
+                </div>
+              
                 
            
         
