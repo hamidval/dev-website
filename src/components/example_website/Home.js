@@ -42,7 +42,8 @@ class Home extends Component {
            
             </video>
             <h1 className="gails-title">
-              <img className="gails-logo" src="https://gailsbread.co.uk/order/themes/gailsbread2019/img/logo.png"></img>
+              {/* <img className="gails-logo" src="https://gailsbread.co.uk/order/themes/gailsbread2019/img/logo.png"></img> */}
+              <div>Gails</div>
             </h1>
            
 
