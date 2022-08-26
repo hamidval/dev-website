@@ -5,7 +5,11 @@ import csharp from './images/C-Sharp.png'
 import react from './images/React-icon.png'
 import net from './images/net.png'
 import aws from './images/aws.png'
-
+import youview from './images/youview.png'
+import reed from './images/reedcourses.png'
+import lambda from './images/lambda.png'
+import teaching from './images/teaching.png'
+import publicspeaking from './images/publicspeaking.png'
 
 
 
@@ -17,7 +21,8 @@ class Home extends Component {
         this.otherSkills = createRef();
 
         this.state = {
-            chosenTechSkill: null
+            chosenTechSkill: null,
+            chosenOtherSkill: null
         }
     }
 
@@ -56,40 +61,142 @@ class Home extends Component {
                 <div id="page1" class="page">
                         <h1 class="pt-5">Hi, Welcome to Hamid's portfolio</h1>
                 </div>
-                <div id="page2" class="page">
+
+
+                <div id="page2" >
                     <h2 id="technicalSkills" ref={this.scrollDiv} class="mt-3 mb-3">Technical Skills</h2>
-                    <div class="card-container mt-3">
+                    
+                    <div className='row'>
 
-                        <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 0})}}>
+                        <div className='col-6'>
+                            <div class="card-container mt-3">
+                                <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 0})}}>
+                                    
+                                        <img src={csharp}></img>
+                                </div>
+                                <div class="card card-body skill-card">
+                                <img src={react}></img>
+                                </div>
+                                <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)}>
+                                <img src={net}></img>
+                                </div>
+                                <div class="card card-body skill-card">
+                                <img src={aws}></img>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card-container mt-3">
+                                <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 0})}}>
+                                    
+                                        <img src={reed}></img>
+                                </div>
+                                <div class="card card-body skill-card">
+                                <img src={youview}></img>
+                                </div>
+                           
+
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
+
+
+                    
+                        
+                            <div id="skillText" class="mt-3 card card-body h4">
+                            {this.state.chosenTechSkill == 0?
                              
-                                <img src={csharp}></img>
-                        </div>
-                        <div class="card card-body skill-card">
-                        <img src={react}></img>
-                        </div>
-                        <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)}>
-                        <img src={net}></img>
-                        </div>
-                        <div class="card card-body skill-card">
-                        <img src={aws}></img>
-                        </div>
-
-                    </div>
-
-
-                    <div id="skillText" class="mt-3 card card-body h4">
-                        {
-                            this.state.chosenTechSkill == 0? "Junior Developer at Reed.co.uk, using the following technologies C# .NET MVC, VueJs, MicrosoftSqlServer, Azure Devops, to build and maintain the Reed Courses Ecommerce platform": null
-                        }
-                    </div>
+                            
+                            (<div class="container job-text">
+                                <div class="row mt-2">
+                                    <div class="col-3">Role :</div>
+                                    <div class="col-9">Junior Developer</div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-3">Company :</div>
+                                    <div class="col-9">Reed.co.uk (Courses)</div>                                    
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-3">About :</div>
+                                    <div class="col-9">Built and maintained the Reed.co.uk Courses ecommerce platform</div>                                    
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-3">Highlights :</div>
+                                    <div class="col-9">
+                                        <ul>
+                                            <li>AB tests</li>
+                                            <li>Built feature for users to advertise certificates as part of their courses</li>
+                                            <li>Discovery and implementation of a hashing algorithm to compare images, project focus was on identitfying courses that have been copied/duplicated</li>
+                                        </ul>  
+                                    </div>                                    
+                                </div>
+                                
+                            </div>)
+                             
+                             
+                             : null
+                            }</div>
+                        
+                    
 
                 </div>
 
 
-                <div id="page3" class="page">
+                <div id="page3" class="page" >
                         <h2 id="otherSkills" ref={this.otherSkills}>Other skills</h2>
+                        <div class="card-container-other mt-4">
+                                <div class={'card card-body other-card '+(this.state.chosenOtherSkill == 0? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 0})}}> 
+                                    <h3>Public speaking</h3>                                   
+                                <img class="other-card-img" src={publicspeaking}></img>
+
+                                <div className={'other-skills-text mt-5 '+(this.state.chosenOtherSkill == 0? null: "hide")}>
+                                    <ul>
+                                        <li>School council president</li>
+                                        <li>Quiz host (at work and at parties!)</li>
+                                        <li>Demo's to the wider company</li>
+                                    </ul>
+                              
+                                    
+                                </div>
+
+                                </div>
+                                <div class={'card card-body other-card '+(this.state.chosenOtherSkill == 1? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 1})}}>
+                                    <h3>Teaching</h3>
+                                <img class="other-card-img"  src={teaching}></img>
+                                <div className={'other-skills-text mt-5 '+(this.state.chosenOtherSkill == 1? null: "hide")}>
+
+                                    <ul>
+                                        <li>Private tutor for maths</li>
+                                        <li>Hosted revison sessions at university</li>
+                                        <li>In 2021, I ran my own Coding Course</li>
+                                    </ul>
+                                    
+                                </div>
+
+                                </div>
+                                <div class={'card card-body other-card '+(this.state.chosenOtherSkill == 2? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 2})}}>
+                                    <h3>Mathematics</h3>
+                                <img class="other-card-img"  src={lambda}></img>
+                                <div className={'other-skills-text mt-5 '+(this.state.chosenOtherSkill == 2? null: "hide")}>
+                                    <ul>
+                                        <li>Always been fasinated by Maths</li>
+                                        <li>Favourite topics include Calculus, probablility and hypothesis testing</li>
+                                        <li>Aswell as the topics explored in Computer Science such as Time/space Complexity, Turing Machines and Data Structures </li>
+                                    </ul>
+                       
+                                    
+                                </div>
+                                </div>
+                               
+
+                            </div>
                 </div>
-  
+                        
+               
             </div>
 
         );

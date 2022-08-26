@@ -44,14 +44,14 @@ h1{
 {
     display: grid;
     grid-gap: 1rem;;
-    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     
 }
 
 .skill-card{
     box-shadow: 2px 2px 6px #ccc;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     text-align: center;
     margin:auto;
     border-radius: 1rem !important;
@@ -75,4 +75,59 @@ h1{
 {
     color: darkgreen;
 }
+
+.job-text{
+    text-align: left;
+}
+
+
+.card-container-other 
+{
+    display: grid;
+    grid-gap: 1rem;;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    
+}
+
+.other-card{
+    box-shadow: 2px 2px 6px #ccc;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    margin:auto;
+    border-radius: 1rem !important;
+    display: block !important;
+    overflow: hidden;
+
+}
+
+.other-card-img
+{
+    width: 200px;
+   
+}
+
+.other-card:hover
+{
+    cursor: pointer;
+   
+    border: 3px solid blueviolet;
+}
+
+.expand
+{
+    transition: all 1s;
+    height: 500px;
+}
+
+.hide
+{
+    transition: all 1s;
+    display: none;
+}
+
+.other-skills-text{
+    text-align: left;
+}
+
 
