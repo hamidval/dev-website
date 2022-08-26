@@ -34,7 +34,8 @@ body {
 }
 
 h1{
-    font-size: 8rem !important;
+    
+    font-size: 5rem !important;
 }
 
 
@@ -49,5 +50,29 @@ h1{
 
 .skill-card{
     box-shadow: 2px 2px 6px #ccc;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin:auto;
+    border-radius: 1rem !important;
+
+}
+
+.skill-card:hover
+{
+    cursor: pointer;
+   
+    border: 3px solid blueviolet;
+}
+
+
+.chosen {
+
+    border: 3px solid blueviolet !important;
+}
+
+#skillText
+{
+    color: darkgreen;
 }
 
