@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "51d9c647a1e3bfea1dea5af829cd0120",
+    "revision": "e9c3f212e8bf9dbaa51bd029234ead31",
     "url": "/dev-website/index.html"
   },
   {
-    "revision": "3e67227e75022b78066f",
+    "revision": "a3073003ac7e4ee7e64b",
     "url": "/dev-website/static/css/2.183a7a79.chunk.css"
   },
   {
-    "revision": "4cba5d96d76ab1ab0e85",
-    "url": "/dev-website/static/css/main.2bc7750a.chunk.css"
+    "revision": "178c530742cb66e9bf47",
+    "url": "/dev-website/static/css/main.4d8b8e66.chunk.css"
   },
   {
-    "revision": "3e67227e75022b78066f",
-    "url": "/dev-website/static/js/2.7685bbb8.chunk.js"
+    "revision": "a3073003ac7e4ee7e64b",
+    "url": "/dev-website/static/js/2.18719c50.chunk.js"
   },
   {
     "revision": "7c35e04416c5b094dcd0aef72def57b9",
-    "url": "/dev-website/static/js/2.7685bbb8.chunk.js.LICENSE.txt"
+    "url": "/dev-website/static/js/2.18719c50.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4cba5d96d76ab1ab0e85",
-    "url": "/dev-website/static/js/main.e1edf0e5.chunk.js"
+    "revision": "178c530742cb66e9bf47",
+    "url": "/dev-website/static/js/main.1e5ec9c1.chunk.js"
   },
   {
     "revision": "44f2d872283d7809bedb",
@@ -44,6 +44,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dev-website/static/media/hamid-back.6a4cf485.jpg"
   },
   {
+    "revision": "e77136a1a4b2744233dba7269c8536fd",
+    "url": "/dev-website/static/media/lambda.e77136a1.png"
+  },
+  {
     "revision": "3ce27aeb3260b64dbb5d6a47c1b80207",
     "url": "/dev-website/static/media/londonSky.3ce27aeb.jpg"
   },
@@ -56,8 +60,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dev-website/static/media/next-black.a089f73f.png"
   },
   {
+    "revision": "18a5958234ee6e85cdc3fd4f766f6d5f",
+    "url": "/dev-website/static/media/publicspeaking.18a59582.png"
+  },
+  {
+    "revision": "26cf4c8233b035f2de14254ff87e7eab",
+    "url": "/dev-website/static/media/reedcourses.26cf4c82.png"
+  },
+  {
+    "revision": "6904adccf8d7236f4f32981eadef005e",
+    "url": "/dev-website/static/media/teaching.6904adcc.png"
+  },
+  {
     "revision": "667434c67a28873e1f4b4376ca8f4c5d",
     "url": "/dev-website/static/media/wanstead.667434c6.png"
+  },
+  {
+    "revision": "1fdf6bc08af5f32fa8e384ccd75b705e",
+    "url": "/dev-website/static/media/youview.1fdf6bc0.png"
   },
   {
     "revision": "e37904179c7fd834876588ac12f9c728",
