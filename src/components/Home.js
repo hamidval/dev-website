@@ -59,12 +59,16 @@ class Home extends Component {
                 </nav>
 
                 <div id="page1" class="page">
-                        <h1 class="pt-5">Hi, Welcome to Hamid's portfolio</h1>
+                    <div class="container">
+                    <h1 class="pt-5">Hi, Welcome to Hamid's portfolio</h1>
+                    </div>
+                        
                 </div>
 
 
-                <div id="page2" >
-                    <h2 id="technicalSkills" ref={this.scrollDiv} class="mt-3 mb-3">Technical Skills</h2>
+                <div id="page2" className='page' >
+                    <div className='container'>
+                    <h2 id="technicalSkills" ref={this.scrollDiv} class="pt-3 mb-3">Technical Skills</h2>
                     
                     <div className='row'>
 
@@ -141,12 +145,14 @@ class Home extends Component {
                              : null
                             }</div>
                         
+                    </div>
+                   
                     
 
                 </div>
 
 
-                <div id="page3" class="page" >
+                <div id="page3" class="page container" >
                         <h2 id="otherSkills" ref={this.otherSkills}>Other skills</h2>
                         <div class="card-container-other mt-4">
                                 <div class={'card card-body other-card '+(this.state.chosenOtherSkill == 0? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 0})}}> 
@@ -194,6 +200,12 @@ class Home extends Component {
                                
 
                             </div>
+                </div>
+
+                <div id="page4" class="page">
+                    <div className='container'>
+                        <h2 className='pt-5'>Personal Intersts</h2>
+                    </div>
                 </div>
                         
                

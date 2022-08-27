@@ -18,7 +18,7 @@ body {
 }
 
 .page {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #page1
@@ -78,6 +78,7 @@ h1{
 
 .job-text{
     text-align: left;
+    font-size: 1rem;
 }
 
 
@@ -129,5 +130,11 @@ h1{
 .other-skills-text{
     text-align: left;
 }
+
+
+#page2{
+    background-color: #ffffe6;
+}
+
 
 
