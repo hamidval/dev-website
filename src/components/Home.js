@@ -68,7 +68,7 @@ class Home extends Component {
 
                 <div id="page2" className='page' >
                     <div className='container'>
-                    <h2 id="technicalSkills" ref={this.scrollDiv} class="pt-3 mb-3">Technical Skills</h2>
+                    <h2 id="technicalSkills" ref={this.scrollDiv} class="pt-3 mb-3">Technical</h2>
                     
                     <div className='row'>
 
@@ -78,13 +78,13 @@ class Home extends Component {
                                     
                                         <img src={csharp}></img>
                                 </div>
-                                <div class="card card-body skill-card">
+                                <div class={'card card-body skill-card ' +(this.state.chosenTechSkill == 1? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 1})}}>
                                 <img src={react}></img>
                                 </div>
-                                <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)}>
+                                <div class={'card card-body skill-card '+(this.state.chosenTechSkill == 0? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 0})}}>
                                 <img src={net}></img>
                                 </div>
-                                <div class="card card-body skill-card">
+                                <div class={'card card-body skill-card ' +(this.state.chosenTechSkill == 1? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 1})}}>
                                 <img src={aws}></img>
                                 </div>
 
@@ -96,7 +96,7 @@ class Home extends Component {
                                     
                                         <img src={reed}></img>
                                 </div>
-                                <div class="card card-body skill-card">
+                                <div class={'card card-body skill-card ' +(this.state.chosenTechSkill == 1? "chosen": null)} onClick={()=>{this.setState({chosenTechSkill: 1})}}>
                                 <img src={youview}></img>
                                 </div>
                            
@@ -142,7 +142,34 @@ class Home extends Component {
                             </div>)
                              
                              
-                             : null
+                             : this.state.chosenTechSkill == 1?
+                             
+                            
+                             (<div class="container job-text">
+                                 <div class="row mt-2">
+                                     <div class="col-3">Role :</div>
+                                     <div class="col-9">Software Developer Intern</div>
+                                 </div>
+                                 <div class="row mt-2">
+                                     <div class="col-3">Company :</div>
+                                     <div class="col-9">Youview</div>                                    
+                                 </div>
+                                 <div class="row mt-2">
+                                     <div class="col-3">About :</div>
+                                     <div class="col-9">Built and maintained the Reed.co.uk Courses ecommerce platform</div>                                    
+                                 </div>
+                                 <div class="row mt-2">
+                                     <div class="col-3">Highlights :</div>
+                                     <div class="col-9">
+                                         <ul>
+                                             <li>10 week internship</li>
+                                             <li>Built a screenshot comparison tool</li>
+                                             <li>hosted quiz, organised charity event</li>
+                                         </ul>  
+                                     </div>                                    
+                                 </div>
+                                 
+                             </div>) : null
                             }</div>
                         
                     </div>
@@ -153,7 +180,7 @@ class Home extends Component {
 
 
                 <div id="page3" class="page container" >
-                        <h2 id="otherSkills" ref={this.otherSkills}>Other skills</h2>
+                        <h2 id="otherSkills" ref={this.otherSkills}>Other</h2>
                         <div class="card-container-other mt-4">
                                 <div class={'card card-body other-card '+(this.state.chosenOtherSkill == 0? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 0})}}> 
                                     <h3>Public speaking</h3>                                   
@@ -202,10 +229,46 @@ class Home extends Component {
                             </div>
                 </div>
 
-                <div id="page4" class="page">
-                    <div className='container'>
-                        <h2 className='pt-5'>Personal Intersts</h2>
+                <div id="page4" >
+                    <div class="page container">
+                    <h2 id="otherSkills" ref={this.otherSkills}>Personal (under construction)</h2>
+                        <div class="card-container-other mt-4">
+                                
+                                <div class={'card card-body personal-card fitness '+(this.state.chosenOtherSkill == 0? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 0})}}> 
+
+                                <div className='card card-body personal-card cover'><h3>Fitness</h3></div>
+                                  
+                                <div className={'other-skills-text mt-5 '}>
+                                    <ul>
+                                        <li>Swimming</li>
+                                        <li>Boxing</li>
+                                        <li>Football</li>
+                                    </ul>                             
+                                    
+                                </div>
+
+                                </div>
+                                <div class={'card card-body personal-card travel'}>
+                                <div className='card card-body personal-card cover'><h3>Travelling</h3></div>
+                                <div className={'other-skills-text mt-5 '}>
+
+                                    <ul>
+                                        <li>One of my newer hobbies</li>
+                                        <li>Recently went to the highlands</li>
+                                        <li>Something I want to do more of in the future</li>
+                                    </ul>
+                                    
+                                </div>
+
+                                </div>
+                        
+                               
+
+                            </div>
+
                     </div>
+
+                        
                 </div>
                         
                

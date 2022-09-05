@@ -136,5 +136,48 @@ h1{
     background-color: #ffffe6;
 }
 
+#page4{
+    background: #ffffe6;
+    opacity: 0.5;
+}
 
+.personal-card{
+    box-shadow: 2px 2px 6px #ccc;
+    background: black !important;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    margin:auto;
+    border-radius: 1rem !important;
+    display: block !important;
+    overflow: hidden;
+
+}
+
+.fitness {
+    color: yellow !important
+}
+
+.cover{
+    transition: all 0.5s;
+    margin-left: -1.25rem;
+    position: absolute;
+}
+.cover:hover{
+  
+    height: 0px;
+    
+    padding: 0px;
+    display: none
+}
+
+
+.travel {
+    color: pink !important
+}
+
+
+.writing {
+    color: lightgreen !important
+}
 
