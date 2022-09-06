@@ -19,6 +19,8 @@ class Home extends Component {
         super(props);
         this.scrollDiv = createRef();
         this.otherSkills = createRef();
+        this.personalSkills = createRef();
+
 
         this.state = {
             chosenTechSkill: null,
@@ -49,7 +51,7 @@ class Home extends Component {
                         <button class="nav-link btn btn-link" href="#otherSkills" onClick={() => {this.otherSkills.current.scrollIntoView({ behavior: 'smooth' }); }}>.OtherSkills( )</button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">.Hobbies&Interests( )</a>
+                        <button class="nav-link btn btn-link" href="#personalSkills" onClick={() => {this.personalSkills.current.scrollIntoView({ behavior: 'smooth' }); }}>.Personal( )</button>
                     </li>
 
                     
@@ -61,6 +63,16 @@ class Home extends Component {
                 <div id="page1" class="page">
                     <div class="container">
                     <h1 class="pt-5">Hi, Welcome to Hamid's portfolio</h1>
+                    
+                    {/* <div className='row'>
+                            <div className='col-9'>
+                                <input className='form form-control'/>
+                            </div>
+                            <div className='col-3'>
+                                <button className="btn btn-primary">search</button>
+                            </div>                          
+                           
+                        </div> */}
                     </div>
                         
                 </div>
@@ -239,7 +251,7 @@ class Home extends Component {
 
                 <div id="page4" >
                     <div class="page container">
-                    <h2 id="otherSkills" ref={this.otherSkills}>Personal</h2>
+                    <h2 id="personalSkills" ref={this.personalSkills}>Personal</h2>
                         <div class="card-container-other mt-4">
                                 
                                 <div class={'card card-body personal-card fitness '+(this.state.chosenOtherSkill == 0? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 0})}}> 
