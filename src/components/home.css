@@ -138,7 +138,7 @@ h1{
 
 #page4{
     background: #ffffe6;
-    opacity: 0.5;
+ 
 }
 
 .personal-card{
@@ -154,6 +154,11 @@ h1{
 
 }
 
+
+.personal-card:hover {
+    transform: scale(1.05);
+}
+
 .fitness {
     color: yellow !important
 }
@@ -165,10 +170,13 @@ h1{
 }
 .cover:hover{
   
-    height: 0px;
+    opacity:0 ;
+    cursor: pointer;
+   
+  
+    position: absolute;
     
-    padding: 0px;
-    display: none
+ 
 }
 
 
@@ -177,7 +185,7 @@ h1{
 }
 
 
-.writing {
+.podcasts {
     color: lightgreen !important
 }
 

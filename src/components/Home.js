@@ -110,8 +110,12 @@ class Home extends Component {
 
 
                     
-                        
-                            <div id="skillText" class="mt-3 card card-body h4">
+                        {
+                            this.state.chosenTechSkill != null?
+                            
+                            (
+
+                                <div id="skillText" class="mt-3 card card-body h4">
                             {this.state.chosenTechSkill == 0?
                              
                             
@@ -171,6 +175,10 @@ class Home extends Component {
                                  
                              </div>) : null
                             }</div>
+                            )
+                            : null
+                        }
+                            
                         
                     </div>
                    
@@ -231,7 +239,7 @@ class Home extends Component {
 
                 <div id="page4" >
                     <div class="page container">
-                    <h2 id="otherSkills" ref={this.otherSkills}>Personal (under construction)</h2>
+                    <h2 id="otherSkills" ref={this.otherSkills}>Personal</h2>
                         <div class="card-container-other mt-4">
                                 
                                 <div class={'card card-body personal-card fitness '+(this.state.chosenOtherSkill == 0? "expand": null)} onClick={()=>{this.setState({chosenOtherSkill: 0})}}> 
@@ -240,9 +248,9 @@ class Home extends Component {
                                   
                                 <div className={'other-skills-text mt-5 '}>
                                     <ul>
-                                        <li>Swimming</li>
-                                        <li>Boxing</li>
-                                        <li>Football</li>
+                                        <li>Swimming, boxing, football</li>
+                                        <li>Love sports/ sporting events</li>
+                                        <li>recently went to an influencer boxing match, BKFC event and Formula E grand prix</li>
                                     </ul>                             
                                     
                                 </div>
@@ -256,6 +264,20 @@ class Home extends Component {
                                         <li>One of my newer hobbies</li>
                                         <li>Recently went to the highlands</li>
                                         <li>Something I want to do more of in the future</li>
+                                    </ul>
+                                    
+                                </div>
+
+                                </div>
+
+                                <div class={'card card-body personal-card podcasts'}>
+                                <div className='card card-body personal-card cover'><h3>Podcasts</h3></div>
+                                <div className={'other-skills-text mt-5 '}>
+
+                                    <ul>
+                                        <li>I have recently taken an interest in podcasts</li>
+                                        <li>I find that they can be beneficial in keeping up with topics such as politics, business and tech aswell as other cool things</li>
+                                        
                                     </ul>
                                     
                                 </div>
